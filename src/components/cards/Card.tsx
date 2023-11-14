@@ -58,7 +58,7 @@ export const Card: FunctionComponent<Props> = ({
 			</div>
 			<span className='card-price'>{cryptoPrice}</span>
 			<p className={Number(cryptoChange) > 0 ? 'cart-change1' : 'cart-change2'}>
-				{cryptoChange}
+				{cryptoChange}$
 			</p>
 		</div>
 	)

@@ -8,9 +8,8 @@ export default function Home() {
 	return (
 		<main>
 			<Header />
-			<div className={style.container}>
-				<CardsList />
-			</div>
+			<CardsList />
+			<div className={style.container}></div>
 		</main>
 	)
 }
