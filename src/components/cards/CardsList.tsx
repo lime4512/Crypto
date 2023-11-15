@@ -5,7 +5,7 @@ import Marquee from 'react-fast-marquee'
 export const CardsList = () => {
 	return (
 		<div className='cards-list-content'>
-			<Marquee>
+			<Marquee pauseOnHover={true}>
 				<div className='ticker-item'>
 					<Card
 						cryptoValue={'BTC'}

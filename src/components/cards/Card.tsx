@@ -26,7 +26,6 @@ export const Card: FunctionComponent<Props> = ({
 					`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${value}&tsyms=USD`
 				)
 				.then(response => {
-					console.log(response)
 					setCryptoPrice(response.data.DISPLAY[value].USD.PRICE)
 					setCryptoChange(response.data.DISPLAY[value].USD.CHANGEPCT24HOUR)
 				})
