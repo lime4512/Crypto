@@ -1,7 +1,21 @@
+import { FunctionComponent, useState } from 'react'
+
 import './Header.css'
 import Image from 'next/image'
 
-export const Header = () => {
+interface Props {
+	sendData: (data: string) => void
+}
+
+export const Header: FunctionComponent<Props> = ({ sendData }) => {
+	const [inpValue, setInpValue] = useState('')
+
+	const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+		setInpValue(event.target.value)
+	}
+	const sendDataInp = () => {
+		sendData(inpValue)
+	}
 	return (
 		<header>
 			<div className='container-header'>
@@ -11,8 +25,14 @@ export const Header = () => {
 				</div>
 
 				<div className='header-search'>
-					<input type='text' className='header-inp' placeholder='Поиск...' />
-					<button className='header-search-btn'>
+					<input
+						type='text'
+						className='header-inp'
+						placeholder='Поиск...'
+						onChange={handleInputChange}
+						value={inpValue}
+					/>
+					<button className='header-search-btn' onClick={sendDataInp}>
 						<Image
 							src='/search-normal.png'
 							alt='Картинка'
